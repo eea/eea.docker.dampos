@@ -6,7 +6,6 @@ dampos:
 
   links:
   - damposdb:damposdb 
-  - postfixcontainer:postfixcontainer
 
 #  - memory_limit=35000
   volumes_from:
