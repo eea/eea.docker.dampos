@@ -1,5 +1,15 @@
 # eea.docker.dampos
 
+run the container with docker-compose:
+
+create the data container iris2_home and iris2_data (see below)
+
+    git clone <reponame>
+
+    docker-compose build 
+
+    docker-compose up -d
+
 run the container: 
 
     docker run --restart=always --name dampos --volumes-from=dampos_home --link damposdb:damposdb -d -p <port_host>:80 eeacms/dampos
