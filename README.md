@@ -14,7 +14,7 @@ run the container:
 
     docker run --restart=always --name dampos --volumes-from=dampos_home --link damposdb:damposdb -d -p <port_host>:80 eeacms/dampos
 
-Dampodb:
+damposdb:
 
     docker run --restart=always -d --volumes-from=dampos_data --name damposdb postgres:9.3
 
