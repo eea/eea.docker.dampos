@@ -22,12 +22,12 @@ current <port_host> = 50008
 
 moving data volume containers from one host to another:
 
-<donor host>
+- donor host
 
     docker run --rm --volumes-from=dampos_data -v $(pwd):/backup busybox tar cvf /backup/dampos_data.tar /var/lib/postgresql/data
     docker run --rm --volumes-from=dampos_home -v $(pwd):/backup busybox tar cvf /backup/dampos_home.tar /var/local
 
-<target host>
+- target host
 
     docker run -d --name dampos_data eeacms/postgres_data
     docker run -d --name dampos_home eeacms/var_local_data
