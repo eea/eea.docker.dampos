@@ -1,0 +1,19 @@
+dampos:
+  build: dampos
+  restart: always
+  ports:
+  - "50008:80"
+
+  links:
+  - damposdb:damposdb 
+  - postfixcontainer:postfixcontainer
+
+#  - memory_limit=35000
+  volumes_from:
+  - dampos_home
+
+damposdb:
+  restart: always
+  image: postgres:9.3
+  volumes_from:
+  - dampos_data
