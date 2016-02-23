@@ -2,7 +2,7 @@
 
 run the container with docker-compose:
 
-create the data container iris2_home and iris2_data (see below)
+create the data container dampos_home and dampos_data (see below)
 
     git clone <reponame>
 
