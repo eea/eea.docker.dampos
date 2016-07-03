@@ -41,3 +41,17 @@ moving data volume containers from one host to another:
 # docker run --rm --volumes-from=dampos_home -v $(pwd):/backups busybox tar zxvf /backups/dampos_home.tar.gz
 # docker run --rm --volumes-from=dampos_data -v $(pwd):/backups busybox tar zxvf /backups/dampos_data.tar.gz
 ```
+
+## Release to production
+
+The production deployment isn't made with `git clone` and `docker-compose build`.
+Instead it pulls an image from Docker Hub. When you have tested your changes
+and are satisfied, then you must push a new image up. Here is how you do it:
+
+    docker build -t eeacms/dampos_dem:latest .
+    docker push eeacms/dampos_dem:latest
+
+There is also an automated build that creates a new image on Docker Hub when a change is pushed to GitHub.
+
+This mechanism will allow us to later implement release versioning and rollback of deployments.
+
